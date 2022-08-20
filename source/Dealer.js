@@ -65,7 +65,6 @@ var Dealer = /** @class */ (function () {
         return true;
     };
     Dealer.prototype.finalSCores = function () {
-        console.log('\n');
         for (var _i = 0, _a = this.Players; _i < _a.length; _i++) {
             var player = _a[_i];
             console.log("".concat(player.name, "'s hand: ").concat(player.print()));

@@ -24,17 +24,17 @@ while (fundsAvailable > 0 && (bet = makeBet(fundsAvailable)) != -1) {
             console.log("you lost $".concat(bet, ". current balance: $").concat(fundsAvailable, "\n"));
     }
     else {
-        console.log('draw!');
+        console.log('\ndraw!');
         fundsAvailable += bet;
         console.log("your balance is $".concat(fundsAvailable, "\n"));
     }
 }
 function makeBet(funds) {
     var num;
-    while (isNaN(num) || (num > funds)) {
+    while (isNaN(num) || (num > funds) || num < -1) {
         try {
-            num = Number.parseInt(prompt("how much would you like to bet? -1 to exit: $"));
-            if (isNaN(num))
+            num = Number.parseInt(prompt("how much would you like to bet? or -1 to exit: $"));
+            if (isNaN(num) || num < -1)
                 throw new Error('this is not a number');
             if (num > funds)
                 throw new Error('you cannot bet more than $' + funds);

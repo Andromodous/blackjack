@@ -71,7 +71,6 @@ export class Dealer implements User {
     }
 
     finalSCores(): void {
-        console.log('\n');
         for (const player of this.Players) {
             console.log(`${player.name}'s hand: ${player.print()}`);
         }
